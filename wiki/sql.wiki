@@ -1,0 +1,40 @@
+= SQL =
+== sqltable ==
+=== admin ===
+{{{
+id: int(11) primary key
+name: varchar(50)
+avatar: char(32)
+password: char(32)
+limit: 1.超级管理员; 2.内容管理
+}}}
+
+=== news ===
+{{{
+id: int(11) primary key
+admin_id: int(11) foreign key
+text: string(300)
+img: char
+time: time
+}}}
+
+=== user ===
+{{{
+id: primary key
+avatar: char
+email: string
+password: char
+}}}
+
+=== comment ===
+{{{
+id: primary key
+user: foreign key
+time: time
+}}}
+
+== src ==
+=== picture ===
+{{{
+time.sub(md5(filename), 5, 5)
+}}}

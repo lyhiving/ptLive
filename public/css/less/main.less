@@ -1,0 +1,213 @@
+// compile:../live
+
+body.live {
+  background: url('../img/bg.jpg') repeat-x center top;
+  > div.container-fluid {
+    min-height: 500px;
+    z-index: 5;
+    background: url('../img/head.jpg') no-repeat center top;
+  }
+  .title {
+    max-width: 840px;
+    margin: auto;
+    > a.xsh {
+      display: block;
+      width: 164px;
+      height: 50px;
+      background: url('../img/logo.png') no-repeat;
+    }
+    > div.h {
+      margin-top: 80px;
+      margin-bottom: 10px;
+      width: 830px;
+      height: 48px;
+      background: url("../img/title.png") no-repeat;
+      h1, h2 {
+        display: none;
+      }
+    }
+    div {
+      width: 830px;
+      text-align: right;
+      span {
+        font: bold 16px '幼圆';
+        text-shadow:3px 2px 2px #996B79;
+      }
+    }
+    p {
+      text-indent: 2em;
+      padding: 10px 0;
+      font: bold 14px '微软雅黑';
+    }
+  }
+}
+
+div.live {
+  max-width: 950px;
+  margin: auto;
+  margin-top: 100px;
+  background: #e0d8d8;
+  opacity: 0.9;
+  .live-pt {
+    background: #CCC2C2;
+    box-shadow: 12px 0 9px #B6B4B4;
+    padding: 10px 20px;
+    div.pt-item {
+      padding: 15px 0 15px 15px;
+      border-bottom: 1px dashed #33212A;
+      // 图文
+      p {
+        font: bolder 16px '微软雅黑';
+        img {
+          border-radius: 10px;
+          margin: 10px;
+          max-width: 550px;
+        }
+      }
+      a.comment {
+        float: left;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .count {
+        float: left;
+        color: #2E2E66;
+        font-weight: bold;
+      }
+      .time {
+        font-size: 14px;
+        float: right;
+        color: #5252CC;
+      }
+      // 评论
+      div.comment {
+        display: none;
+        opacity: 0.8;
+        width: 90%;
+        @bg: #E6F9FF;
+        .comment-list {
+          padding: 5px 15px;
+          margin: 10px auto;
+          background: @bg;
+          border-radius: 5px;
+          border: 1px solid #A3C2CC;
+          &:hover {
+            box-shadow: inset 2px 3px 6px rgba(0, 0, 0, 0.1);;
+            border: 1px solid #5C8B99;
+          }
+          .clearfix {
+            border-bottom: 1px dashed @bg;
+            &:hover {
+              border-bottom: 1px dashed #7A9199;
+            }
+          }
+          border: 1px solid #99C0CC;
+          strong {
+            font-size: 15px;
+          }
+          span.msg {
+            font-size: 13px;
+          }
+          .time {
+            color: #B3B3FF;
+            font-size: 13px;
+          }
+        }
+        form {
+          input[name='name'] {
+            width: 70px;
+          }
+          input[type='text'] {
+            border-radius: 5px;
+            background: @bg;
+          }
+        }
+      }
+    }
+    // 加载更多
+    .load-pt {
+      padding: 10px;
+      text-align: center;
+    }
+  }
+  // 图片预览
+  .live-pic {
+    padding-top: 20px;
+    overflow: auto;
+    > ul {
+      margin: 0;
+      text-align: center;
+      list-style-type: none;
+      li {
+        margin: 0;
+        padding: 10px;
+      }
+      img {
+        max-width: 150px;
+        padding: 5px;
+        border: 3px solid #CCB8B8;
+        &:hover {
+          border: 3px solid #998A8A;
+        }
+      }
+    }
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 14px;
+    }
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
+    &::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-track-piece {
+      background: #E0D8D8;
+      width: 15px;
+      height: 11px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-width: 0;
+      border-style: solid;
+      border-radius: 6px;
+      background: -webkit-gradient(linear,left top,right top,
+        from(#FFF2F2),
+        color-stop(50%,#FFE6E6),color-stop(75%,#FFD9D9),
+        to(#CCA3A3));
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: -webkit-gradient(linear,left top,right top,
+        from(#FFF2F2),
+        color-stop(50%,#FFE6E6),color-stop(75%,#FFE6E6),
+        to(#CCB8B8));
+    }
+    &::-webkit-scrollbar-thumb:active {
+      background: -webkit-gradient(linear,left top,right top,
+        from(#FFFCFC),
+        color-stop(50%,#FFF2F2),color-stop(75%,#FFE6E6),
+        to(#FFF2F2));
+    }
+  }
+}
+
+
+.live-content, .publish {
+  margin: auto;
+  height: 100px;
+}
+
+.publish {
+  width: 600px;
+}
+
+.admin-login {
+  padding: 40px;
+  margin: auto;
+  max-width: 600px;
+}
+
+.pt-manager {
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
