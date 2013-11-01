@@ -26,8 +26,8 @@ body.live .title {
 }
 body.live .title > a.xsh {
   display: block;
-  width: 164px;
-  height: 50px;
+  width: 200px;
+  height: 68px;
   background: url('../img/logo.png') no-repeat;
 }
 body.live .title > div.h {
@@ -199,4 +199,8 @@ div.live .live-pic::-webkit-scrollbar-thumb:active {
 .pt-manager img {
   width: 40px;
   height: 40px;
+}
+.brand img {
+  width: 17px;
+  height: 17px;
 }
