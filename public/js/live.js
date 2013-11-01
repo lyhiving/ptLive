@@ -6,6 +6,15 @@ $(document).ready(function(){
             return false;
         });
 
+        function escapeHtml(text) {
+          return text
+              .replace(/&/g, "&amp;")
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;")
+              .replace(/"/g, "&quot;")
+              .replace(/'/g, "&apos;");
+        }
+
         // 发表评论
         var options = { 
             // target: '#output1',
@@ -26,9 +35,9 @@ $(document).ready(function(){
                     var name = $form.find('[name="name"]').val();
                     $form.parent().find('.comment-list').append(
                         '<div class="clearfix">' +
-                            '<strong>' + name + ': </strong>' +
+                            '<strong>' + escapeHtml(name) + ': </strong>' +
                             '<span class="msg">' +
-                            $form.find('[name="msg"]').val() +
+                            escapeHtml($form.find('[name="msg"]').val()) +
                             '</span>' +
                     '</div>');
                     $('.comment>form>input[name="msg"]').val('');

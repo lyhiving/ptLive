@@ -1,6 +1,9 @@
 <link rel="stylesheet" href="js/jquery-ui/css/enhanced.css" />
 <script type="text/javascript" src="js/jquery-ui/js/fileinput.jquery.js"></script>
 <script type="text/javascript">
+if (!(document.all &&
+    navigator.userAgent.indexOf('Opera') === -1))
+{
     $(document).ready(function() {
         $('#Upload_image').customFileInput({
             feedback_text: '选择图片...文件',
@@ -9,6 +12,7 @@
             button_position : 'right'
         });
     });
+}
 </script>
 <div class="publish">
     <form class="well form form-horizontal" action="index.php?r=admin/publish" method="post" enctype="multipart/form-data">

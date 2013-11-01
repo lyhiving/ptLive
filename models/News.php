@@ -18,8 +18,8 @@ class News extends CActiveRecord {
         $types = array('jpg', 'jpeg', 'gif', 'png');
 
         if ($pic != null) {
-            if($pic->size > 3*1024*1024){  
-                return "提示：文件大小{$pic->getSize()}超过3M";
+            if($pic->getSize() > 2*1024*1024){
+                return "提示：文件不能超过2M,{$pic->getSize()}";
             } else if ( !in_array(strtolower($pic->getExtensionName()), $types)) {
                 return "提示：文件类型{$pic->getType()}不允许";
             } else {

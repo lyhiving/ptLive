@@ -39,7 +39,7 @@ class live extends CWidget {
                 );
             }
             $comment_count = Comment::getCommentCount($new->id);
-            $text = nl2br($new->text);
+            $text = nl2br(htmlspecialchars($new->text));
             echo <<<EOF
             <div class="pt-item">
                 <div>
@@ -74,10 +74,11 @@ EOF;
         echo '<div class="comment-list">';
         if (count($comments) > 0) {
             foreach ($comments as $c) {
+                $name = htmlspecialchars($c->name);
                 $msg = htmlspecialchars($c->msg);
                 echo <<<EOF
                     <div class="clearfix">
-                        <strong>{$c->name}:</strong>
+                        <strong>{$name}:</strong>
                         <span class="msg">{$msg}</span>
                         <span class="time">{$c->time}</span>
                     </div>
