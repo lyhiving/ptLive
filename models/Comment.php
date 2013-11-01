@@ -17,6 +17,7 @@ class Comment extends CActiveRecord {
 
     public static function getComments($news_id) {
         return self::model()->findAll(array(
+            'order' => 'id',
             'condition' => 'news_id=:news_id',
             'params' => array(':news_id' => $news_id),
         ));
@@ -24,7 +25,7 @@ class Comment extends CActiveRecord {
 
     public static function getCommentsOfPage($news_id, $pageSize) {
         $criteria = new CDbCriteria();
-        $criteria->order = 'id DESC';
+        $criteria->order = 'id';
         $criteria->condition = 'news_id=:news_id';
         $criteria->params = array(':news_id' => $news_id);
         $count = Comment::model()->count($criteria);
