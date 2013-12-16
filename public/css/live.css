@@ -13,15 +13,14 @@
   background-color: #00661B;
 }
 body.live {
-  background: url('../img/bg.jpg') repeat-x center top;
+  position: relative;
 }
 body.live > div.container-fluid {
   min-height: 500px;
   z-index: 5;
-  background: url('../img/head.jpg') no-repeat center top;
 }
 body.live .title {
-  max-width: 840px;
+  max-width: 930px;
   margin: auto;
 }
 body.live .title > a.xsh {
@@ -33,8 +32,8 @@ body.live .title > a.xsh {
 body.live .title > div.h {
   margin-top: 80px;
   margin-bottom: 10px;
-  width: 830px;
-  height: 48px;
+  width: 930px;
+  height: 115px;
   background: url("../img/title.png") no-repeat;
 }
 body.live .title > div.h h1,
@@ -45,14 +44,21 @@ body.live .title div {
   width: 830px;
   text-align: right;
 }
-body.live .title div span {
-  font: bold 16px '幼圆';
-  text-shadow: 3px 2px 2px #996B79;
-}
 body.live .title p {
   text-indent: 2em;
   padding: 10px 0;
   font: bold 14px '微软雅黑';
+}
+img#header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  width: 100%;
+  height: 550px;
+  z-index: -2;
 }
 div.live {
   max-width: 950px;

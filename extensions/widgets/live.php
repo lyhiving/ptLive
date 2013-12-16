@@ -11,7 +11,7 @@ class live extends CWidget {
         $news = News::getNews($this->offset, $this->limit, $this->type);
         switch ($this->type) {
             case 1:
-                $this->echoPt($news);
+                $this->echoPicText($news);
                 break;
             case 2:
                 $this->echoPic($news);
@@ -19,7 +19,7 @@ class live extends CWidget {
         }
     }
 
-    public function echoPt($news) {
+    public function echoPicText($news) {
         foreach ($news as $new) {
             if ($new->img == '') {
                 $img = '';
