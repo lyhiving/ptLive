@@ -7,7 +7,7 @@ return array(
     'components' => array(
         'db' => array(
             'connectionString' => 'mysql:dbname=ptlive;host=localhost',
-            'charset' => 'UTF-8'
+            'charset' => 'UTF8',
             'username' => 'root',
             'password' => '',
             'tablePrefix' => '',
