@@ -4,6 +4,10 @@ class News extends CActiveRecord {
         return parent::model($className);
     }
 
+    public function tableName() {
+        return 'news';
+    }
+
     public function relations() {
         return array(
             'admin' => array(self::BELONGS_TO, 'Admin', 'admin_id'),

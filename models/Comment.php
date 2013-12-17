@@ -4,6 +4,10 @@ class Comment extends CActiveRecord {
         return parent::model($className);
     }
 
+    public function tableName() {
+        return 'comment';
+    }
+
     public static function sendComment($name, $msg, $news_id) {
         // TODO 判断空串
         $comment = new Comment;
